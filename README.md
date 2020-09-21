@@ -30,6 +30,7 @@
         ~ npm install --save-dev webpack
         ~ npm install --save-dev webpack-cli
         ~ npm install --save-dev webpack-dev-server
+        ~ code webpack.config.js
 
     - Babel
         ~ npm install --save-dev @babel/core
@@ -37,6 +38,7 @@
         ~ npm install --save-dev @babel/preset-env
         ~ npm install --save-dev @babel/preset-react
         ~ npm install --save-dev @babel/register
+        ~ code .babelrc        
 
     2. Create a Redux store to update and manage local application state
 

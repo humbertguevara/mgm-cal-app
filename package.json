@@ -4,7 +4,7 @@
   "description": "MGM test calendar application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,8 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "@babel/register": "^7.11.5",
+    "babel-loader": "^8.1.0",
+    "chalk": "^4.1.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
