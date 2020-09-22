@@ -38,10 +38,16 @@
         ~ npm install --save-dev @babel/preset-env
         ~ npm install --save-dev @babel/preset-react
         ~ npm install --save-dev @babel/register
+        ~ npm install --save-dev babel-loader
         ~ code .babelrc        
 
-    2. Create a Redux store to update and manage local application state
+#### Create a Redux store to update and manage local application state
 
+    - Create default application state as JSON file for development
+        ~ code src/app/server/defaultServer.js
+
+    - Create basic Redux store to provide state application as necessary
+    
     3. Assemble website out of Reat components
 
     4. Add styling with Bootstrap

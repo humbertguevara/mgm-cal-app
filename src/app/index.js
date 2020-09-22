@@ -1,3 +1,3 @@
-import chalk from 'chalk';
+import { store } from './store';
 
-console.log(chalk.green("Hello world 123 !!!"));
+console.log(store.getState());
