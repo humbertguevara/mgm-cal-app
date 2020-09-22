@@ -1,24 +1,37 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { requestEventCreation } from '../store/mutations';
 
-export const EventList = ({ events, name }) => (
+export const EventList = ({ events, name, teamId, createNewEvent}) => (
     <div>
-        <h3>{name}</h3>
+        <h3>{name} - Testing 1</h3>
         <div>
             {events.map(event => (
-                <div>{event.date} - {event.name}</div>
+                <div key={event.id}>
+                    {event.date} - {event.name}
+                </div>
             ))}
         </div>
+        <button onClick={() => createNewEvent(teamId)}>Add Event</button>
     </div>
 );
 
 const mapStateToProps = (state, ownProps) => {
-    let teamId = ownProps.id;
+    let id = ownProps.id;
     return {
         name: ownProps.name,
-        id: teamId,
-        events: state.events.filter(event => event.team === teamId),
+        teamId: id,
+        events: state.events.filter(event => event.team === id),
     };
 };
 
-export const ConnectedEventList = connect(mapStateToProps)(EventList);
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        createNewEvent(id) {
+            console.log("Creating new task ....", id);
+            dispatch(requestEventCreation(id));
+        }
+    }
+}
+
+export const ConnectedEventList = connect(mapStateToProps, mapDispatchToProps)(EventList);

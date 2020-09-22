@@ -6,10 +6,10 @@ export const Dashboard = ({ teams }) => (
     <div>
         {
             teams.map(team => (
-                <ConnectedEventList id={team.id} name={team.name} />
+                <ConnectedEventList key={team.id} id={team.id} name={team.name} />
             ))
         }
-    </div>
+    </div> 
 );
 
 function mapStateToProps(state) {

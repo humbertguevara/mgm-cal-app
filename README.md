@@ -49,7 +49,9 @@
         ~ code src/app/server/defaultServer.js
 
     3. Create basic Redux store to provide state application as necessary
-    
+        ~ npm install --save redux-logger
+        ~ npm install --save redux-saga
+        
     4. Assemble website out of Reat components
         ~ npm install --save react
         ~ npm install --save react-dom
