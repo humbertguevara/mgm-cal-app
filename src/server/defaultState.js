@@ -30,7 +30,7 @@ export const defaultState = {
         {
             name: "Refactor Tests",
             id: "E1",
-            group: "T1",
+            team: "T1",
             owner: "U1",
             date: '2020-09-15',
             isComplete: false,
@@ -38,7 +38,7 @@ export const defaultState = {
         {
             name: "OAuth features",
             id: "E2",
-            group: "T1",
+            team: "T1",
             owner: "U1",
             date: '2020-09-26',
             isComplete: false,
@@ -46,15 +46,15 @@ export const defaultState = {
         {
             name: "Security protocols analysis",
             id: "E3",
-            group: "T2",
+            team: "T2",
             owner: "U2",
             date: '2020-09-28',
             isComplete: false,
         },
         {
-            name: "OAuth feature analysis",
+            name: "Config load balancer",
             id: "E4",
-            group: "T2",
+            team: "T2",
             owner: "U2",
             date: '2020-09-22',
             isComplete: false,
@@ -62,7 +62,7 @@ export const defaultState = {
         {
             name: "Meeting with CTO",
             id: "E5",
-            group: "T3",
+            team: "T3",
             owner: "U3",
             date: '2020-09-22',
             isComplete: false,

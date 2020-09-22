@@ -41,13 +41,18 @@
         ~ npm install --save-dev babel-loader
         ~ code .babelrc        
 
-#### Create a Redux store to update and manage local application state
+#### Frontend tasks
 
-    - Create default application state as JSON file for development
+    1. Create a Redux store to update and manage local application state
+
+    2. Create default application state as JSON file for development
         ~ code src/app/server/defaultServer.js
 
-    - Create basic Redux store to provide state application as necessary
+    3. Create basic Redux store to provide state application as necessary
     
-    3. Assemble website out of Reat components
+    4. Assemble website out of Reat components
+        ~ npm install --save react
+        ~ npm install --save react-dom
+        ~ npm install --save react-redux
 
-    4. Add styling with Bootstrap
+    5. Add styling with Bootstrap
