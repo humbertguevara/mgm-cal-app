@@ -4,7 +4,6 @@ import { ConnectedEventList } from './EventList';
 
 export const Dashboard = ({ teams }) => (
     <div>
-        <h2>Dashboard</h2>
         {
             teams.map(team => (
                 <ConnectedEventList id={team.id} name={team.name} />

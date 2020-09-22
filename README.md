@@ -54,5 +54,8 @@
         ~ npm install --save react
         ~ npm install --save react-dom
         ~ npm install --save react-redux
+        ~ npm install --save react-router-dom
+        ~ npm install --save history
+
 
     5. Add styling with Bootstrap
