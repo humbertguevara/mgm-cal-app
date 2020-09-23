@@ -61,10 +61,13 @@
 
 ### Backend
 
-1. Setup server (Express)
-
-2. Install MongoDB
+1. Install MongoDB
     ~ npm install --save-dev mongodb@3.1.10
+
+2. Setup server (Express)
+    ~ npm install --save-dev express@4.16.3 
+    ~ npm install --save-dev cors@2.8.4 
+    ~ npm install --save-dev body-parser@1.18.
 
 3. Config Node to communicate MongoDB with Express
 
