@@ -64,6 +64,7 @@
 1. Setup server (Express)
 
 2. Install MongoDB
+    ~ npm install --save-dev mongodb@3.1.10
 
 3. Config Node to communicate MongoDB with Express
 
