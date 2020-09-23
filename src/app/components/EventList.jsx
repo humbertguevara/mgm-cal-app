@@ -1,15 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { requestEventCreation } from '../store/mutations';
+import { Link } from 'react-router-dom';
 
 export const EventList = ({ events, name, teamId, createNewEvent}) => (
     <div>
-        <h3>{name} - Testing 1</h3>
+        <h3>{name}</h3>
         <div>
             {events.map(event => (
-                <div key={event.id}>
-                    {event.date} - {event.name}
-                </div>
+                <Link to={`/event/${event.id}`} key={event.id} >
+                    <div>
+                        {event.date} - {event.name}
+                    </div>
+                </Link>
             ))}
         </div>
         <button onClick={() => createNewEvent(teamId)}>Add Event</button>

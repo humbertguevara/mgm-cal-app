@@ -5,16 +5,22 @@ import { ConnectedDashboard } from "./Dashboard";
 import { Router, Route } from 'react-router-dom';
 import { history } from '../store/history';
 import { ConnectedNavigation } from './Navigation';
+import { ConnnectedEventDetail } from './EventDetail';
 
 export const Main = () => (
     <Router history={history}>
         <Provider store={store}>
             <ConnectedNavigation />
             <div>
+                <Route exact path="/dashboard"
+                    render={()=>(<ConnectedDashboard />)}
+                />
                 <Route
                     exact
-                    path="/dashboard"
-                    render={()=>(<ConnectedDashboard />)}
+                    path="/event/:id"
+                    render={(match) => (
+                        <ConnnectedEventDetail match={match}/>
+                    )}
                 />
             </div>
         </Provider>

@@ -20,11 +20,11 @@
     ** Mongo DB will stores data persistently in non-relational database 
 
 
-## Start
+## Tasks
 
-### Steps
+### Frontend
 
-#### Set up Webpack and Babel to support our application ES6 & JSX
+1. Set up Webpack and Babel to support our application ES6 & JSX
 
     - Webpack
         ~ npm install --save-dev webpack
@@ -41,23 +41,30 @@
         ~ npm install --save-dev babel-loader
         ~ code .babelrc        
 
-#### Frontend tasks
+2. Create a Redux store to update and manage local application state
 
-    1. Create a Redux store to update and manage local application state
+3. Create default application state as JSON file for development
+    ~ code src/app/server/defaultServer.js
 
-    2. Create default application state as JSON file for development
-        ~ code src/app/server/defaultServer.js
-
-    3. Create basic Redux store to provide state application as necessary
-        ~ npm install --save redux-logger
-        ~ npm install --save redux-saga
+4. Create basic Redux store to provide state application as necessary
+    ~ npm install --save redux-logger
+    ~ npm install --save redux-saga
         
-    4. Assemble website out of Reat components
-        ~ npm install --save react
-        ~ npm install --save react-dom
-        ~ npm install --save react-redux
-        ~ npm install --save react-router-dom
-        ~ npm install --save history
+5. Assemble website out of Reat components
+    ~ npm install --save react
+    ~ npm install --save react-dom
+    ~ npm install --save react-redux
+    ~ npm install --save react-router-dom
+    ~ npm install --save history
 
+6. Add styling with Bootstrap
 
-    5. Add styling with Bootstrap
+### Backend
+
+1. Setup server (Express)
+
+2. Install MongoDB
+
+3. Config Node to communicate MongoDB with Express
+
+4. Create REST API to persist data on our server
