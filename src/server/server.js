@@ -4,11 +4,12 @@ import bodyParser from 'body-parser';
 import { connectDB } from './connectDB';
 import './initDB';
 import { authenticationRoute } from './authenticate';
+import chalk from 'chalk';
 
-const port = 7777;
+const port = 7778;
 const app = express();
 
-app.listen(port, console.info("Server running, listening on port ", port));
+app.listen(port, console.log(chalk.blue("Server running, listening on port ", port)));
 
 app.use(
     cors(),

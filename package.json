@@ -4,7 +4,7 @@
   "description": "MGM test calendar application",
   "main": "index.js",
   "scripts": {
-    "bundle": "webpack",
+    "bundle": "webpack -p",
     "dev": "webpack-dev-server --open",
     "test-connect": "babel-node src/server/connectDB",
     "init-db": "babel-node src/server/initDB",

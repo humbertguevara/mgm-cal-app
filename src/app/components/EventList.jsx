@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { requestEventCreation } from '../store/mutations';
 import { Link } from 'react-router-dom';
 
-export const EventList = ({ events, name, teamId, createNewEvent}) => (
-    <div>
-        <h3>{name}</h3>
+export const EventList = ({ events, teamName, teamId, createNewEvent}) => (
+    <div className="card p-2 m-2">
+        <h3>{teamName}</h3>
         <div>
             {events.map(event => (
                 <Link to={`/event/${event.id}`} key={event.id} >
@@ -15,16 +15,19 @@ export const EventList = ({ events, name, teamId, createNewEvent}) => (
                 </Link>
             ))}
         </div>
-        <button onClick={() => createNewEvent(teamId)}>Add Event</button>
+        <button className="btn btn-primary btn-block mt-2"
+            onClick={() => createNewEvent(teamId)}>
+                Add Event
+        </button>
     </div>
 );
 
 const mapStateToProps = (state, ownProps) => {
-    let id = ownProps.id;
+    let teamId = ownProps.id;
     return {
-        name: ownProps.name,
-        teamId: id,
-        events: state.events.filter(event => event.team === id),
+        teamName: ownProps.name,
+        teamId: teamId,
+        events: state.events.filter(event => event.team === teamId),
     };
 };
 

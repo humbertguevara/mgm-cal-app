@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const EventDetail = ({id, event, teams}) => (
-    <div>
+    <div className="card p-3 col-6">
         <h3>{event.name} - {event.date}</h3>
 
         <div>

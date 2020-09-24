@@ -4,6 +4,7 @@ import uuid from 'uuid';
 import axios from 'axios';
 import { history } from './history'
 import * as mutations from './mutations';
+import chalk from 'chalk';
 
 const url = 'http://localhost:7777';
 
@@ -27,37 +28,17 @@ export function* eventCreationSaga() {
     }
 }
 
-// export function* commentCreationSaga(){
-//     while (true) {
-//         const comment = yield take (mutations.ADD_TASK_COMMENT);
-//         axios.post(url + `/comment/new`,{comment})
-//     }
-// }
-
-// export function* taskModificationSaga(){
-//     while (true){
-//         const task = yield take([mutations.SET_TASK_GROUP, mutations.SET_TASK_NAME,mutations.SET_TASK_COMPLETE]);
-//         axios.post(url + `/task/update`,{
-//             task:{
-//                 id:task.taskID,
-//                 group:task.groupID,
-//                 name:task.name,
-//                 isComplete:task.isComplete
-//             }});
-//     }
-// }
-
 export function* userAuthenticationSaga(){
-    while (true){
+    while (true) {
         const {username, password} = yield take(mutations.REQUEST_AUTHENTICATE_USER);
         try {
-            const { data } = yield axios.post(url + '/authenticate', {username, password});
+            const { data } = yield axios.post(url + `/authenticate`, {username, password});
 
             if (!data) {
                 throw new Error();
             }
 
-            console.log("User authenticated !!!", data);
+            console.log(chalk.blue("User authenticated !!!", data));
 
             yield put(mutations.setState(data.state));
             yield put(mutations.processAuthenticateUser(mutations.AUTHENTICATED));

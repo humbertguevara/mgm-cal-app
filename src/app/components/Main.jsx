@@ -5,27 +5,32 @@ import { ConnectedDashboard } from "./Dashboard";
 import { ConnectedLogin } from "./Login";
 import { Router, Route } from 'react-router-dom';
 import { history } from '../store/history';
-import { ConnectedNavigation } from './Navigation';
+// import { ConnectedNavigation } from './Navigation';
 import { ConnnectedEventDetail } from './EventDetail';
 import { Redirect } from 'react-router';
 
 const RouteGuard = Component => ({match}) => {
-    console.info("Route guard", match);
     if(!store.getState().session.authenticated) {
+        console.log("Not authenticated");
         return <Redirect to="/" />
     } else {
-        return <Component match={match} />
+         return <Component match={match} />
     }
 }
 
 export const Main = () => (
     <Router history={history}>
         <Provider store={store}>
-            <div>
-                <ConnectedNavigation />
-                <Route exact path="/" component={ConnectedLogin}/>
-                <Route exact path="/dashboard" render={RouteGuard(ConnectedDashboard)}/>
-                <Route exact path="/event/:id" render={RouteGuard(ConnnectedEventDetail)}/>
+            <div className="container mt-3">
+
+                <Route exact
+                    path="/" component={ConnectedLogin}/>
+                <Route exact
+                    path="/dashboard"
+                    render={RouteGuard(ConnectedDashboard)}/>
+                <Route exact
+                    path="/event/:id"
+                    render={RouteGuard(ConnnectedEventDetail)}/>
             </div>
         </Provider>
     </Router>
