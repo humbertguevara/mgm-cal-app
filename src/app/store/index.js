@@ -12,6 +12,8 @@ export const store = createStore(
         session(userSession = defaultState.session || {}, action) {
             let {type, authenticated, session} = action;
             switch (type) {
+                case mutations.SET_STATE:
+                    return {...userSession, id: action.state.session.id};
                 case mutations.REQUEST_AUTHENTICATE_USER:
                     return {...userSession, authenticated: mutations.AUTHENTICATED};
                 case mutations.PROCESSING_AUTHENTICATE_USER:
@@ -20,8 +22,10 @@ export const store = createStore(
                     return userSession;
             }
         },
-        events(events = defaultState.events, action) {
+        events(events = [], action) {
             switch (action.type) {
+                case mutations.SET_STATE:
+                    return action.state.events;
                 case mutations.CREATE_EVENT:
                     return [...events, {
                         id: action.eventId,
@@ -37,13 +41,17 @@ export const store = createStore(
             }
             return events
         },
-        comments(comments = defaultState.comments) {
+        comments(comments = []) {
             return comments;
         },
-        teams(teams = defaultState.teams) {
+        teams(teams = [], action) {
+            switch(action.type) {
+                case mutations.SET_STATE:
+                    return action.state.teams;
+            }
             return teams;
         },
-        users(users = defaultState.users) {
+        users(users = []) {
             return users;
         }
     }),

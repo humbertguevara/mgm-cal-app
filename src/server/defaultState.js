@@ -8,22 +8,22 @@ export const defaultState = {
         {
             id: "U1",
             team: "T1",
-            name: "Laura Dev",
+            name: "laura_dev",
             passwordHash: md5('12345')
         }, {
             id: "U2",
             team: "T1",
-            name: "Mary Nat",
+            name: "mary_nat",
             passwordHash: md5('12345')
         }, {
             id: "U3",
             team: "T2",
-            name: "John Wall",
+            name: "john_wall",
             passwordHash: md5('12345')
         }, {
             id: "U4",
             team: "T3",
-            name: "John Doe",
+            name: "john_doe",
             passwordHash: md5('12345')
         }
     ],

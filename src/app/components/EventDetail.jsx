@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const EventDetail = ({id, comments, event, isComplete, teams}) => (
+const EventDetail = ({id, event, teams}) => (
     <div>
         <h3>{event.name} - {event.date}</h3>
 
@@ -31,7 +31,7 @@ const EventDetail = ({id, comments, event, isComplete, teams}) => (
 );
 
 const mapStateToProps = (state, ownProps) => {
-    let id = ownProps.match.match.params.id;
+    let id = ownProps.match.params.id;
     let event = state.events.find(event => event.id === id);
     let teams = state.teams;
 
