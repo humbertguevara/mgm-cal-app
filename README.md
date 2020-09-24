@@ -69,6 +69,7 @@
 
 1. Install MongoDB
     ~ npm install --save-dev mongodb@3.1.10
+    ~ brew services start mongodb-community
 
 2. Setup server (Express)
     ~ npm install --save-dev express@4.16.3 

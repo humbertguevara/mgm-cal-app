@@ -5,7 +5,7 @@ import { ConnectedDashboard } from "./Dashboard";
 import { ConnectedLogin } from "./Login";
 import { Router, Route } from 'react-router-dom';
 import { history } from '../store/history';
-// import { ConnectedNavigation } from './Navigation';
+import { ConnectedNavigation } from './Navigation';
 import { ConnnectedEventDetail } from './EventDetail';
 import { Redirect } from 'react-router';
 
@@ -21,8 +21,7 @@ const RouteGuard = Component => ({match}) => {
 export const Main = () => (
     <Router history={history}>
         <Provider store={store}>
-            <div className="container mt-3">
-
+            <div className="container p-5">
                 <Route exact
                     path="/" component={ConnectedLogin}/>
                 <Route exact

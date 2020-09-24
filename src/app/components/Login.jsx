@@ -3,11 +3,14 @@ import { connect } from 'react-redux';
 import * as mutations from '../store/mutations';
 
 const LoginComponent = ({authenticateUser, authenticated}) => {
-    return <div className="card p-3 col-6">
-        <h2>Login Here</h2>
+    return <div className="card text-center">
+        <h3>Login Here</h3>
         <form onSubmit={authenticateUser}>
-            <input type="text" placeholder="username" name="username" defaultValue="Dev" className="form-control" />
-            <input type="password" placeholder="password" name="password" defaultValue="" className="form-control mt-2"/>
+            <input type="text" placeholder="username" name="username" defaultValue="Dev"
+                className="form-control" />
+            <input type="password" placeholder="password" name="password" defaultValue=""
+                className="form-control mt-2"/>
+
             {authenticated === mutations.NOT_AUTHENTICATED ? <p>Login incorrect</p> : null}
 
             <button type="submit" className="form-control mt-2 btn btn-primary">

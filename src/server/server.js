@@ -6,7 +6,7 @@ import './initDB';
 import { authenticationRoute } from './authenticate';
 import chalk from 'chalk';
 
-const port = 7778;
+const port = 7777;
 const app = express();
 
 app.listen(port, console.log(chalk.blue("Server running, listening on port ", port)));

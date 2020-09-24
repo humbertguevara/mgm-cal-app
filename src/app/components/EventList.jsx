@@ -4,12 +4,12 @@ import { requestEventCreation } from '../store/mutations';
 import { Link } from 'react-router-dom';
 
 export const EventList = ({ events, teamName, teamId, createNewEvent}) => (
-    <div className="card p-2 m-2">
-        <h3>{teamName}</h3>
-        <div>
+    <div>
+        <h3>{teamName} - Events</h3>
+        <div className="row-cols-3">
             {events.map(event => (
                 <Link to={`/event/${event.id}`} key={event.id} >
-                    <div>
+                    <div className="card p-2 mt-2">
                         {event.date} - {event.name}
                     </div>
                 </Link>

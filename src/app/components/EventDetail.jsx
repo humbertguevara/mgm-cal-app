@@ -23,7 +23,7 @@ const EventDetail = ({id, event, teams}) => (
         <br />
 
         <div>
-            <Link to="/dashboard">
+            <Link to="/dashboard" className="btn btn-primary mt-2">
                 <button>Done</button>
             </Link>
         </div>
