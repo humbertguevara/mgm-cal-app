@@ -39,7 +39,12 @@
         ~ npm install --save-dev @babel/preset-react
         ~ npm install --save-dev @babel/register
         ~ npm install --save-dev babel-loader
-        ~ code .babelrc        
+        ~ code .babelrc   
+
+    - Others npm packages
+        ~ npm install --save-dev concurrently@4.0.1
+        ~ npm install --save-dev axios@0.18.0 
+        ~ npm install --save md5     
 
 2. Create a Redux store to update and manage local application state
 
@@ -54,7 +59,8 @@
     ~ npm install --save react
     ~ npm install --save react-dom
     ~ npm install --save react-redux
-    ~ npm install --save react-router-dom
+    ~ npm install --save react-router
+    ~ npm install --save react-router-dom    
     ~ npm install --save history
 
 6. Add styling with Bootstrap

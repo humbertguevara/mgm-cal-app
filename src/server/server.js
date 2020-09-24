@@ -2,27 +2,11 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import { connectDB } from './connectDB';
-
-// import { MongoClient } from 'mongodb';
-// import path from 'path';
-
-// import './initialize-db';
-// import { authenticationRoute } from './authenticate'
-
-
-// import { addNewTask, updateTask } from './communicate-db';
-
+import './initDB';
+import { authenticationRoute } from './authenticate';
 
 const port = 7777;
 const app = express();
-
-
-
-// app.use(
-//     cors(),
-//     bodyParser.urlencoded({extended:true}),
-//     bodyParser.json()
-// );
 
 app.listen(port, console.info("Server running, listening on port ", port));
 
@@ -33,6 +17,8 @@ app.use(
     }),
     bodyParser.json()
 );
+
+authenticationRoute(app);
 
 export const addNewEvent = async event => {
     const db = await connectDB();

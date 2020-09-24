@@ -1,29 +1,42 @@
+import md5 from 'md5';
+
 export const defaultState = {
+    // session: {
+    //     authenticated: false
+    // },
     users: [
         {
             id: "U1",
-            name: "Laura Dev"
+            team: "T1",
+            name: "Laura Dev",
+            passwordHash: md5('12345')
         }, {
             id: "U2",
-            name: "Mary Nat"
+            team: "T1",
+            name: "Mary Nat",
+            passwordHash: md5('12345')
         }, {
             id: "U3",
-            name: "John Wall"
+            team: "T2",
+            name: "John Wall",
+            passwordHash: md5('12345')
+        }, {
+            id: "U4",
+            team: "T3",
+            name: "John Doe",
+            passwordHash: md5('12345')
         }
     ],
     teams: [
         {
-            name: "Developers",
             id: "T1",
-            owner: "U1"
+            name: "Developers"
         }, {
-            name: "Network Engineers",
             id: "T2",
-            owner: "U2"
+            name: "Network Engineers"
         }, {
-            name: "Security",
             id: "T3",
-            owner: "U3"
+            name: "Security"
         }
     ],
     events: [
@@ -70,10 +83,20 @@ export const defaultState = {
     ],
     comments: [
         {
-            owner: "U1",
             id: "C1",
+            owner: "U1",
             event: "E1",
-            content: "Great work !!!"
+            content: "First comment from user 1 to event 1"
+        }, {
+            id: "C2",
+            owner: "U1",
+            event: "E1",
+            content: "Second comment from user 1 to event 1"
+        }, {
+            id: "C3",
+            owner: "U2",
+            event: "E1",
+            content: "Third comment from user 2 to event 1"
         }
     ]
 };
